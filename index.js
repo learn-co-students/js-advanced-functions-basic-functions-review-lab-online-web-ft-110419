@@ -8,10 +8,7 @@ const mondayWork = function (activity = 'go to the office') {
 }
 
 function wrapAdjective(highlight) {
-    let wrapFunc = function(adjective) {
-        return `You are ${highlight} ${adjective} ${highlight}!`
-    }
-    return wrapFunc
+    (function(adjective){return `You are ${highlight} ${adjective} ${highlight}!`})(highlight)
 }
 
 const Calculator = {
