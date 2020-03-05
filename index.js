@@ -30,11 +30,18 @@ let Calculator = {
 }
 
 function actionApplyer(num, arry) {
-    let finalNum = num
-    arry.forEach(element => {
-       finalNum += element(num)
-    });
-    return finalNum
+    let currentNum
+    if (arry.length == 0) {
+        return num
+    } else {
+        for (let i = 0; i < arry.length; i++) {
+            if (i === 0) {
+                currentNum = arry[i](num)
+            } else {
+                currentNum = arry[i](currentNum)
+            }
+        }
+    return currentNum
+    }
 }
-
 
